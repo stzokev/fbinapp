@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>64bbeb48-50f4-42c8-95c8-025d061b0b04</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>com.telerik.TestBlank</AppIdentifier>
+    <AppIdentifier>com.telerik.IceTestApp</AppIdentifier>
     <ProjectName>TestBlank</ProjectName>
     <IsRunnable>true</IsRunnable>
     <TemplateAppName>Cordova240</TemplateAppName>
@@ -11,6 +11,10 @@
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <BundleVersion>1.0</BundleVersion>
+    <iOSDisplayName />
+    <iOSDeviceFamily>1;2</iOSDeviceFamily>
+    <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
@@ -70,6 +74,14 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="scripts\jquery.js" />
+    <Content Include="scripts\jso.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="styles\img\background.png" />
+    <Content Include="styles\img\footer-background.png" />
+    <Content Include="styles\img\header.png" />
+    <Content Include="styles\img\logo.png" />
+    <Content Include="styles\main.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
