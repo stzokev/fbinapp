@@ -2,18 +2,18 @@
 
 var deviceready = function() {
 
-    var debug = false,
+    var debug = true,
         cmdLogin = document.getElementById("cmdLogin"),
         cmdWipe = document.getElementById("cmdWipe"),
         cmdPost = document.getElementById("cmdPost"),
     	cmdGetFeed = document.getElementById("cmdGetFeed"),
         cmdDelete = document.getElementById("cmdDelete"),
-        cmdClearLog = document.getElementById("cmdClearLog");
+        cmdClearLog = document.getElementById("cmdClearLog"),
+        inAppBrowserRef;
     
-    var ref; 
     jso_registerRedirectHandler(function(url) {
-        var ref = window.open(url); 
-        ref.addEventListener('loadstart', LocationChange);
+        inAppBrowserRef = window.open(url, "_blank"); 
+        inAppBrowserRef.addEventListener('loadstop', function(e){LocationChange(e.url)}, false);
     });
 
     /*
@@ -28,7 +28,7 @@ var deviceready = function() {
 
         jso_checkfortoken('facebook', url, function() {
             console.log("Closing InAppBrowser, because a valid response was detected.");
-            ref.close();
+            inAppBrowserRef.close();
         });
     };
 
